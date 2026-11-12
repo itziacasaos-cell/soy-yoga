@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soy Yoga · Agenda tu clase muestra por $80</title>
+<meta name="description" content="Agenda tu clase muestra en Soy Yoga por $80. Aeroyoga, Hatha, Ashtanga, Yoga Pelota y más. Una comunidad donde haces amigos, no sólo clases.">
+<meta property="og:title" content="Soy Yoga · Tu clase muestra por $80">
+<meta property="og:description" content="Ven a conocernos: clases de yoga y aeroyoga en Iztapalapa. Aquí somos comunidad.">
+<meta property="og:image" content="img/hero-estudio.jpg">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F3ECE4; --cream-2:#EAE0D5; --paper:#FBF8F4;
+  --ink:#2B1D2C; --ink-soft:#4A3B4B; --mauve:#6E5F72;
+  --terra:#B0452A; --terra-dark:#8F3620; --line:#DCCFC2;
+  --ok:#3F7A55; --radius:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:.82rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--terra)}
+.label{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--mauve)}
+h1,h2,h3{line-height:.95;font-weight:800;letter-spacing:-.01em}
+.display{font-size:clamp(3rem,9vw,7.4rem);text-transform:uppercase;font-weight:900;letter-spacing:-.02em;line-height:.88}
+h2{font-size:clamp(2.2rem,5.5vw,4.2rem);text-transform:uppercase;font-weight:900;line-height:.92}
+.lead{font-size:clamp(1.15rem,2vw,1.45rem);font-weight:300;color:var(--ink);max-width:36ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:1.02rem;padding:1em 1.7em;border-radius:999px;text-decoration:none;transition:transform .15s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-terra{background:var(--terra);color:#fff;box-shadow:0 10px 24px -10px rgba(176,69,42,.7)}
+.btn-terra:hover{background:var(--terra-dark)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+section{padding:clamp(70px,10vw,120px) 0}
+.photo{border-radius:var(--radius);overflow:hidden;background:var(--cream-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:40;background:rgba(243,236,228,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.scrolled{border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand img{height:52px;width:auto}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.98rem}
+.nav-links a:not(.btn):hover{color:var(--terra)}
+.nav-links .btn{padding:.7em 1.3em;font-size:.95rem}
+@media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+/* HERO */
+.hero{padding-top:clamp(40px,6vw,70px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero h1{margin:18px 0 22px}
+.hero .lead{margin-bottom:34px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-visual .main{aspect-ratio:4/3.4}
+.hero-visual .mini{position:absolute;width:42%;aspect-ratio:3/4;left:-9%;bottom:-12%;border:8px solid var(--cream)}
+.badge{position:absolute;right:-18px;top:-26px;width:170px;height:170px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 18px 40px -14px rgba(0,0,0,.35)}
+.badge b{font-size:3.4rem;font-weight:900;line-height:.9}
+.badge span{font-size:.92rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.05}
+.hero-facts{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.hero-facts div{border-left:2px solid var(--line);padding-left:16px}
+.hero-facts strong{display:block;font-size:1.15rem;font-weight:700}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-visual{margin:20px 10px 50px 30px}.badge{width:130px;height:130px;right:-8px}.badge b{font-size:2.6rem}}
+
+/* PAGOS */
+.pay{background:var(--ink);color:var(--cream);padding:46px 0}
+.pay-grid{display:grid;grid-template-columns:auto 1fr 1fr;gap:30px;align-items:center}
+.pay h3{font-size:1.6rem;text-transform:uppercase;font-weight:800;line-height:1}
+.pay-card{border:1px solid rgba(243,236,228,.22);border-radius:20px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pay-card .amt{font-size:2.1rem;font-weight:800;white-space:nowrap}
+.pay-card small{display:block;color:#CDBFC9;font-size:.92rem}
+.pay-card.best{background:var(--terra);border-color:var(--terra)}
+.pay-card.best small{color:#FBE3DA}
+.tag{display:inline-block;background:var(--cream);color:var(--terra);font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.35em .8em;border-radius:99px;margin-bottom:6px}
+@media(max-width:860px){.pay-grid{grid-template-columns:1fr}}
+
+/* AEROYOGA */
+.aero-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.aero-head .display{font-size:clamp(3.4rem,13vw,10rem)}
+.aero-grid{display:grid;grid-template-columns:1fr 1fr 1.05fr;gap:22px}
+.aero-grid .photo{aspect-ratio:3/4}
+.aero-info{background:var(--paper);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px}
+.aero-info .row strong{display:block;font-size:1.35rem;font-weight:600;line-height:1.2;margin-top:4px}
+.spots{display:flex;gap:8px;margin-top:8px}
+.spots i{width:34px;height:34px;border-radius:50%;background:var(--terra);display:block;opacity:.9}
+.aero-info .btn{margin-top:auto}
+@media(max-width:860px){.aero-grid{grid-template-columns:1fr 1fr}.aero-info{grid-column:1/-1}}
+
+/* HORARIOS */
+.sched{background:var(--paper)}
+.sched-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.sched-table{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.day{background:var(--cream);border-radius:18px;padding:16px 12px;display:flex;flex-direction:column;gap:10px}
+.day h4{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);font-weight:800}
+.cls{background:#fff;border-radius:12px;padding:10px 11px;font-size:.88rem;line-height:1.2;font-weight:600}
+.cls time{display:block;font-size:.78rem;color:var(--mauve);font-weight:500;margin-bottom:3px}
+.cls.aero{background:var(--terra);color:#fff}
+.cls.aero time{color:#FBE3DA}
+@media(max-width:1000px){.sched-table{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:640px){.sched-table{grid-template-columns:1fr 1fr}.sched-top{grid-template-columns:1fr}}
+
+/* COMUNIDAD */
+.comm-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,80px);align-items:center}
+.comm-text p{font-size:1.15rem;font-weight:300;margin-top:20px;max-width:46ch}
+.comm-text p strong{font-weight:600}
+.pillars{display:grid;gap:14px;margin-top:30px}
+.pillar{display:flex;gap:16px;align-items:flex-start;background:var(--paper);border-radius:18px;padding:18px 20px}
+.pillar .ic{flex:none;width:42px;height:42px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-content:center;font-weight:800}
+.pillar b{display:block;font-size:1.08rem}
+.pillar span{color:var(--ink-soft);font-weight:300}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;gap:14px}
+.collage .photo:nth-child(1){grid-row:1/3}
+.collage .photo:nth-child(4){grid-column:1/3}
+@media(max-width:860px){.comm-grid{grid-template-columns:1fr}.collage{grid-template-rows:160px 160px 180px}}
+
+/* ESPACIO */
+.space{background:var(--ink);color:var(--cream)}
+.space .eyebrow{color:#E3A68F}
+.space-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:14px;margin-top:40px}
+.space-grid .photo{background:#3a2c3b}
+.space-grid .w2{grid-column:span 2}
+.space-grid .h2{grid-row:span 2}
+@media(max-width:860px){.space-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}}
+
+/* PROMO */
+.promo-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin-top:44px}
+.plan{border-radius:var(--radius);padding:36px;background:var(--paper);display:flex;flex-direction:column;gap:16px;position:relative}
+.plan.hot{background:var(--terra);color:#fff}
+.plan .price{font-size:clamp(3rem,6vw,4.4rem);font-weight:900;line-height:1}
+.plan .price small{font-size:1rem;font-weight:500;opacity:.8}
+.plan .old{text-decoration:line-through;opacity:.7;font-weight:500;font-size:1.3rem}
+.plan ul{list-style:none;display:grid;gap:8px}
+.plan li{padding-left:26px;position:relative}
+.plan li::before{content:"✓";position:absolute;left:0;font-weight:800}
+.plan li.no::before{content:"✕"}
+.plan .btn{margin-top:auto;align-self:flex-start}
+.plan.hot .btn{background:#fff;color:var(--terra)}
+.ribbon{position:absolute;top:22px;right:22px;background:var(--ink);color:#fff;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.5em 1em;border-radius:99px}
+.warn{display:flex;gap:16px;align-items:center;border:2px solid var(--terra);background:#FFF4EF;border-radius:20px;padding:20px 24px;margin-top:24px}
+.warn .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-content:center;font-weight:900;font-size:1.4rem}
+.warn p{font-size:1.05rem}
+@media(max-width:860px){.promo-grid{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--cream);padding:70px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+footer .label{color:#B9A9BB}
+footer p,footer a{font-size:1.05rem}
+.socials{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.socials a{display:inline-flex;align-items:center;gap:.5em;text-decoration:none;border:1px solid rgba(243,236,228,.3);padding:.6em 1.1em;border-radius:99px;font-weight:600;font-size:.95rem}
+.socials a:hover{background:var(--cream);color:var(--ink)}
+.socials svg{width:18px;height:18px;fill:currentColor}
+.foot-logo{height:80px;filter:invert(94%) sepia(6%) saturate(400%) hue-rotate(330deg)}
+.copy{border-top:1px solid rgba(243,236,228,.15);margin-top:50px;padding-top:24px;font-size:.88rem;color:#B9A9BB}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr}}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-content:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;background:rgba(43,29,44,.62);padding:24px 14px;overflow-y:auto}
+.modal.open{display:flex}
+.sheet{background:var(--cream);width:min(720px,100%);border-radius:26px;padding:clamp(22px,4vw,40px);position:relative;margin:auto 0;animation:pop .25s ease}
+@keyframes pop{from{transform:translateY(16px);opacity:0}}
+.close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;border:0;background:var(--paper);font-size:1.4rem;cursor:pointer;color:var(--ink)}
+.sheet h3{font-size:clamp(1.8rem,4vw,2.5rem);text-transform:uppercase;font-weight:900;margin:8px 0 6px}
+.step{margin-top:26px}
+.step-t{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.08rem;margin-bottom:12px}
+.step-t .n{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-content:center;font-size:.85rem}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt label{display:block;height:100%;background:var(--paper);border:2px solid transparent;border-radius:16px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.opt label b{display:block;font-size:1.02rem}
+.opt label small{color:var(--mauve);font-size:.88rem;line-height:1.3;display:block;margin-top:2px}
+.opt input:checked+label{border-color:var(--terra);background:#fff}
+.opt input:focus-visible+label{outline:3px solid var(--ink);outline-offset:2px}
+.cal{background:var(--paper);border-radius:18px;padding:16px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cal-head b{font-size:1.08rem}
+.cal-head b::first-letter{text-transform:uppercase}
+.cal-head button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:1.1rem;color:var(--ink)}
+.cal-head button:disabled{opacity:.3;cursor:not-allowed}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.cal-grid .dow{font-size:.72rem;font-weight:700;color:var(--mauve);letter-spacing:.1em;padding:4px 0}
+.cal-grid button{aspect-ratio:1;border-radius:12px;border:0;font:inherit;font-weight:600;font-size:.95rem;background:transparent;color:#BDB0B6;cursor:default;position:relative}
+.cal-grid button.open{background:#fff;color:var(--ink);cursor:pointer;border:1.5px solid var(--line)}
+.cal-grid button.open:hover{border-color:var(--terra)}
+.cal-grid button.full{background:repeating-linear-gradient(135deg,#EFE6DD 0 6px,#E6DACF 6px 12px);color:#A8979D;text-decoration:line-through}
+.cal-grid button.sel{background:var(--terra)!important;color:#fff!important;border-color:var(--terra)!important}
+.cal-grid button.open::after{content:"";position:absolute;bottom:6px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--terra)}
+.cal-grid button.sel::after{background:#fff}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem;color:var(--mauve);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.notice{margin-top:12px;background:#FFF4EF;border-left:4px solid var(--terra);padding:12px 14px;border-radius:10px;font-size:.95rem}
+.notice button{background:none;border:0;color:var(--terra);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+.slots{display:grid;gap:8px}
+.slot{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--paper);border:2px solid transparent;border-radius:14px;padding:12px 16px;cursor:pointer;font:inherit;text-align:left;color:var(--ink)}
+.slot:hover:not(:disabled){border-color:var(--line)}
+.slot.sel{border-color:var(--terra);background:#fff}
+.slot:disabled{opacity:.5;cursor:not-allowed}
+.slot b{font-size:1rem}
+.slot small{color:var(--mauve)}
+.slot .left{font-size:.85rem;font-weight:700;color:var(--terra);white-space:nowrap}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fields .full{grid-column:1/-1}
+.field label{display:block;font-size:.88rem;font-weight:600;margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--terra)}
+.field textarea{min-height:76px;resize:vertical}
+@media(max-width:560px){.fields,.seg{grid-template-columns:1fr}}
+.bank{background:#fff;border-radius:14px;padding:14px 16px;margin-top:10px;font-size:.95rem;display:grid;gap:4px}
+.bank code{font-family:inherit;font-weight:700;letter-spacing:.04em}
+.drop{margin-top:10px;border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;background:#fff;cursor:pointer;display:block}
+.drop.has{border-color:var(--ok);border-style:solid}
+.drop input{display:none}
+.drop img{max-height:140px;margin:10px auto 0;border-radius:8px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;margin-top:16px;cursor:pointer}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--terra);flex:none}
+.summary{margin-top:24px;background:var(--ink);color:var(--cream);border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.summary .sum-l{font-size:.95rem;color:#D8CCD6}
+.summary .sum-l b{color:#fff;display:block;font-size:1.05rem}
+.summary .sum-r{font-size:2rem;font-weight:900}
+.err{color:#B3261E;font-weight:600;font-size:.95rem;margin-top:12px;display:none}
+.err.show{display:block}
+.done{text-align:center;padding:10px 0}
+.done .big{width:80px;height:80px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-content:center;font-size:2.4rem;margin:0 auto 14px}
+.done .actions{display:grid;gap:10px;margin-top:22px}
+.spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{display:none!important}
+.muted{color:var(--mauve);font-size:.92rem}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#inicio" class="brand" aria-label="Soy Yoga inicio"><img src="img/logo.png" alt="Soy Yoga"></a>
+    <nav class="nav-links">
+      <a href="#aeroyoga">Aeroyoga</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#promo">Promo</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" class="btn btn-terra" data-book>Agendar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Clase muestra · Soy Yoga</p>
+      <h1 class="display">Tu primera clase</h1>
+      <p class="lead">Ven a respirar, moverte y conocer a la comunidad. Elige tu clase, aparta tu lugar y vive Soy Yoga por <strong>$80</strong>.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-terra" data-book>Agendar mi clase →</a>
+        <a href="#horarios" class="btn btn-ghost">Ver horarios</a>
+      </div>
+      <div class="hero-facts">
+        <div><span class="label">Aeroyoga</span><strong>Sáb y dom · 9:30 am</strong></div>
+        <div><span class="label">Grupos pequeños</span><strong>Atención personal</strong></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="photo main"><img src="img/estudio-frente.jpg" alt="Alumnas practicando con pelota en el estudio Soy Yoga" fetchpriority="high"></div>
+      <div class="photo mini"><img src="img/aeroyoga-inversion.jpg" alt="Alumna en inversión de aeroyoga" loading="lazy"></div>
+      <div class="badge"><b>$80</b><span>clase<br>muestra</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGOS -->
+<div class="pay">
+  <div class="wrap pay-grid">
+    <h3>¿Cómo<br>pagar?</h3>
+    <div class="pay-card">
+      <div><b>Mercado Pago</b><small>Tarjeta o saldo · incluye comisión</small></div>
+      <div class="amt" data-price-mp>$88.21</div>
+    </div>
+    <div class="pay-card best">
+      <div><span class="tag">Sin comisión</span><b>Transferencia</b><small>Sube la captura de tu depósito al agendar</small></div>
+      <div class="amt" data-price-tr>$80</div>
+    </div>
+  </div>
+</div>
+
+<!-- AEROYOGA -->
+<section id="aeroyoga">
+  <div class="wrap">
+    <div class="aero-head">
+      <div>
+        <p class="eyebrow">Clases de yoga aéreo</p>
+        <h2 class="display">Aeroyoga</h2>
+      </div>
+      <p class="lead">Flota, estira y fortalece tu cuerpo en el aire.</p>
+    </div>
+    <div class="aero-grid">
+      <div class="photo"><img src="img/aeroyoga-hamaca.jpg" alt="Alumna practicando aeroyoga en hamaca" loading="lazy"></div>
+      <div class="photo"><img src="img/aeroyoga-inversion.jpg" alt="Inversión con hamaca de aeroyoga" loading="lazy"></div>
+      <div class="aero-info">
+        <div class="row"><span class="label">Horario</span><strong>Sábados y domingos, 9:30 am</strong></div>
+        <div class="row"><span class="label">Clase muestra</span><strong>$80 · transferencia sin comisión</strong></div>
+        <p class="muted">Cada alumno tiene su propia hamaca y atención cercana. Si un día ya está lleno, el calendario te mostrará el siguiente fin de semana disponible.</p>
+        <a href="#" class="btn btn-terra" data-book="aeroyoga">Apartar mi hamaca</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section class="sched" id="horarios">
+  <div class="wrap">
+    <div class="sched-top">
+      <div><p class="eyebrow">Horarios</p><h2>Encuentra tu clase</h2></div>
+      <p class="lead">Grupos pequeños para que tu maestro te acompañe de cerca en cada postura.</p>
+    </div>
+    <div class="sched-table" id="schedTable"></div>
+    <div style="margin-top:34px;text-align:center"><a href="#" class="btn btn-ink" data-book="piso">Agendar clase muestra</a></div>
+  </div>
+</section>
+
+<!-- COMUNIDAD -->
+<section id="comunidad">
+  <div class="wrap comm-grid">
+    <div class="comm-text">
+      <p class="eyebrow">Más que un estudio</p>
+      <h2>Aquí somos comunidad</h2>
+      <p>En Soy Yoga no llegas, tomas tu clase y te vas. <strong>Aquí te conocemos por tu nombre</strong>, te saludamos al llegar y te extrañamos cuando faltas.</p>
+      <p>Muchas de nuestras alumnas y alumnos llegaron solos y hoy tienen amigos con quienes practicar, platicar y crecer. Formamos lazos que van más allá del tapete.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="ic">01</div><div><b>Haces amigos de verdad</b><span>Grupos pequeños donde todos se conocen y se apoyan.</span></div></div>
+        <div class="pillar"><div class="ic">02</div><div><b>Todas las edades y niveles</b><span>Nadie llega sabiendo; aquí cada quien avanza a su ritmo.</span></div></div>
+        <div class="pillar"><div class="ic">03</div><div><b>Un espacio para ti</b><span>Llegas a respirar, a soltar el día y a sentirte en casa.</span></div></div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="photo"><img src="img/comunidad-sol.jpg" alt="Grupo practicando yoga con pelotas en un salón soleado" loading="lazy" style="object-position:70% 50%"></div>
+      <div class="photo"><img src="img/comunidad-pelotas.jpg" alt="Compañeros sonriendo durante la práctica" loading="lazy" style="object-position:85% 50%"></div>
+      <div class="photo"><img src="img/maestro.jpg" alt="Maestro en meditación al inicio de la clase" loading="lazy"></div>
+      <div class="photo"><img src="img/comunidad-perro.jpg" alt="Clase grupal guiada por el maestro" loading="lazy" style="object-position:50% 60%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACIO -->
+<section class="space">
+  <div class="wrap">
+    <p class="eyebrow">Nuestro espacio</p>
+    <h2>Un lugar para soltar el día</h2>
+    <div class="space-grid">
+      <div class="photo w2 h2"><img src="img/estudio-amplio.jpg" alt="Salón principal de Soy Yoga" loading="lazy" style="object-position:50% 60%"></div>
+      <div class="photo w2"><img src="img/lounge.jpg" alt="Sala de estar con plantas y ventana redonda" loading="lazy"></div>
+      <div class="photo"><img src="img/recepcion.jpg" alt="Recepción con símbolo Om" loading="lazy"></div>
+      <div class="photo"><img src="img/estudio-hamacas.jpg" alt="Alumna en postura con hamacas de aeroyoga al fondo" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section id="promo">
+  <div class="wrap">
+    <p class="eyebrow">Promoción</p>
+    <h2>Practica todo el mes</h2>
+    <div class="promo-grid">
+      <div class="plan">
+        <span class="label">Mes ilimitado</span>
+        <div class="price">$1,050<small> /mes</small></div>
+        <ul>
+          <li>Una clase por día</li>
+          <li>Todas las clases del horario regular</li>
+          <li class="no"><strong>No incluye Aeroyoga</strong></li>
+        </ul>
+        <button class="btn btn-ink" data-plan="mes">Pagar mes ilimitado</button>
+      </div>
+      <div class="plan hot">
+        <span class="ribbon">3 × 2</span>
+        <span class="label" style="color:#FBE3DA">Promo 3 meses ilimitados</span>
+        <div class="old">$3,150</div>
+        <div class="price">$2,100<small> por 3 meses</small></div>
+        <ul>
+          <li>Pagas 2 meses ilimitados y <strong>te llevas el tercero gratis</strong></li>
+          <li>Una clase por día durante 3 meses</li>
+          <li class="no"><strong>No incluye Aeroyoga</strong></li>
+        </ul>
+        <button class="btn" data-plan="promo">Quiero la promo 3 × 2</button>
+      </div>
+    </div>
+    <div class="warn" role="note">
+      <div class="ic">!</div>
+      <p><strong>Importante:</strong> el plan ilimitado y la promo 3 × 2 <strong>no incluyen las clases de Aeroyoga</strong>. El Aeroyoga se agenda y se paga por separado ($80 por clase).</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="img/logo.png" alt="Soy Yoga" class="foot-logo">
+        <p style="margin-top:18px;max-width:34ch;color:#D8CCD6">Una comunidad para respirar, moverte y hacer amigos. Te esperamos en tu primera clase.</p>
+      </div>
+      <div>
+        <p class="label">Ubicación</p>
+        <p style="margin-top:8px"><a id="mapLink" target="_blank" rel="noopener"></a></p>
+        <p class="label" style="margin-top:22px">Informes y reservas</p>
+        <p style="margin-top:8px"><a id="waText" target="_blank" rel="noopener"></a></p>
+      </div>
+      <div>
+        <p class="label">Síguenos</p>
+        <div class="socials">
+          <a id="fbLink" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>Facebook</a>
+          <a id="igLink" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.6.1 3.9 1.4 4 4 .1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.6-1.4 3.9-4 4-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.6-.1-3.9-1.4-4-4-.1-1-.1-1.3-.1-4s0-3 .1-4c.1-2.6 1.4-3.9 4-4 1-.1 1.3-.1 4-.1z"/></svg>Instagram</a>
+          <a class="waLink" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.7 7.7 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.5-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <p class="copy">© <span id="yr"></span> Soy Yoga · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<a class="wa-float waLink" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.7 7.7 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.5-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+
+<!-- MODAL: AGENDAR -->
+<div class="modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+  <div class="sheet">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+
+    <form id="bookForm" novalidate>
+      <p class="eyebrow">Clase muestra · $80</p>
+      <h3 id="bookTitle">Agenda tu clase</h3>
+      <p class="muted">Elige tu clase, día y horario. Te confirmamos por WhatsApp.</p>
+
+      <div class="step">
+        <div class="step-t"><span class="n">1</span>¿Qué clase quieres probar?</div>
+        <div class="seg">
+          <div class="opt"><input type="radio" name="tipo" id="t-aero" value="aeroyoga"><label for="t-aero"><b>Aeroyoga</b><small>Sábados y domingos, 9:30 am</small></label></div>
+          <div class="opt"><input type="radio" name="tipo" id="t-piso" value="piso"><label for="t-piso"><b>Yoga (horario regular)</b><small>Hatha, Ashtanga, Pelota y más</small></label></div>
+        </div>
+      </div>
+
+      <div class="step hidden" id="stepCal">
+        <div class="step-t"><span class="n">2</span>Elige el día</div>
+        <div class="cal">
+          <div class="cal-head"><button type="button" id="calPrev" aria-label="Mes anterior">‹</button><b id="calTitle"></b><button type="button" id="calNext" aria-label="Mes siguiente">›</button></div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="legend"><span><i style="background:#fff;border:1.5px solid var(--line)"></i>Disponible</span><span><i style="background:repeating-linear-gradient(135deg,#EFE6DD 0 3px,#E6DACF 3px 6px)"></i>Lleno</span><span id="calLoading" class="hidden">Actualizando lugares…</span></div>
+        </div>
+        <div class="notice hidden" id="fullNotice"></div>
+      </div>
+
+      <div class="step hidden" id="stepSlot">
+        <div class="step-t"><span class="n">3</span>Elige el horario</div>
+        <div class="slots" id="slots"></div>
+      </div>
+
+      <div class="step hidden" id="stepData">
+        <div class="step-t"><span class="n">4</span>Tus datos</div>
+        <div class="fields">
+          <div class="field full"><label for="f-nombre">Nombre completo *</label><input id="f-nombre" name="nombre" autocomplete="name" required></div>
+          <div class="field"><label for="f-tel">WhatsApp (10 dígitos) *</label><input id="f-tel" name="telefono" type="tel" inputmode="numeric" autocomplete="tel" placeholder="55 1234 5678" required></div>
+          <div class="field"><label for="f-email">Correo</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="para enviarte tu confirmación"></div>
+          <div class="field full"><label for="f-exp">¿Has practicado yoga antes?</label>
+            <select id="f-exp" name="experiencia"><option>Nunca, es mi primera vez</option><option>Un poco</option><option>Sí, practico seguido</option></select></div>
+          <div class="field full"><label for="f-notas">¿Alguna lesión o algo que debamos saber?</label><textarea id="f-notas" name="notas" placeholder="Opcional"></textarea></div>
+        </div>
+      </div>
+
+      <div class="step hidden" id="stepPay">
+        <div class="step-t"><span class="n">5</span>Forma de pago</div>
+        <div class="seg">
+          <div class="opt"><input type="radio" name="metodo" id="m-tr" value="transferencia" checked><label for="m-tr"><b>Transferencia · <span data-price-tr>$80</span></b><small>Sin comisión. Sube tu captura aquí.</small></label></div>
+          <div class="opt"><input type="radio" name="metodo" id="m-mp" value="mercadopago"><label for="m-mp"><b>Mercado Pago · <span data-price-mp>$88.21</span></b><small>Incluye comisión. Pagas al terminar.</small></label></div>
+        </div>
+        <div id="trBox">
+          <div class="bank" id="bankBox"></div>
+          <label class="drop" id="drop">
+            <input type="file" id="f-file" accept="image/*,application/pdf">
+            <b>📎 Sube la captura de tu depósito *</b><br><span class="muted" id="dropTxt">Imagen o PDF · máx. 8 MB</span>
+            <img id="dropPrev" class="hidden" alt="Vista previa del comprobante">
+          </label>
+        </div>
+        <p class="muted hidden" id="mpBox" style="margin-top:10px">Al dar clic en “Agendar” apartamos tu lugar y te llevamos a Mercado Pago para pagar <b data-price-mp>$88.21</b>.</p>
+        <label class="check"><input type="checkbox" id="f-ok" required> <span>Confirmo mis datos y entiendo que mi lugar queda confirmado al recibir el pago.</span></label>
+      </div>
+
+      <div class="summary hidden" id="summary">
+        <div class="sum-l"><b id="sumClass"></b><span id="sumWhen"></span></div>
+        <div class="sum-r" id="sumAmt"></div>
+      </div>
+      <p class="err" id="formErr" role="alert"></p>
+      <button class="btn btn-terra hidden" id="submitBtn" type="submit" style="width:100%;margin-top:16px">Agendar mi clase</button>
+    </form>
+
+    <div class="done hidden" id="doneBox">
+      <div class="big">✓</div>
+      <h3>¡Lugar apartado!</h3>
+      <p id="doneTxt"></p>
+      <div class="actions" id="doneActions"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: PLAN ILIMITADO -->
+<div class="modal" id="planModal" role="dialog" aria-modal="true" aria-labelledby="planTitle">
+  <div class="sheet" style="width:min(560px,100%)">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">Antes de pagar</p>
+    <h3 id="planTitle"></h3>
+    <div class="warn" style="margin-top:16px">
+      <div class="ic">!</div>
+      <p>Este plan incluye <strong>una clase por día</strong> del horario regular y <strong>NO incluye clases de Aeroyoga</strong>. El Aeroyoga se paga por separado.</p>
+    </div>
+    <label class="check"><input type="checkbox" id="planOk"> <span>Entiendo que el plan ilimitado <strong>no incluye Aeroyoga</strong>.</span></label>
+    <a class="btn btn-terra" id="planPay" target="_blank" rel="noopener" style="width:100%;margin-top:18px" aria-disabled="true">Ir a pagar con Mercado Pago</a>
+    <p class="muted" style="margin-top:12px;text-align:center">Después de pagar, mándanos tu comprobante por <a class="waLink" target="_blank" rel="noopener">WhatsApp</a> para activar tu plan.</p>
+  </div>
+</div>
+
+<script>
+/* ================== CONFIGURACIÓN — EDITA AQUÍ ================== */
+const CONFIG = {
+  // Pega aquí la URL de tu Apps Script (ver LEEME.md). Si está vacío, las reservas se envían por WhatsApp.
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyQAfpVvWS7Ha4ZVIKyWEQt9uCk21qeSjBYlsRwvIz-rHxy-hSzW-seuYCVfhprqAip6w/exec",
+
+  whatsapp: "5530696235",
+  facebook: "https://www.facebook.com/profile.php?id=61584089979860",
+  instagram: "https://www.instagram.com/soy_yoga.mx/",
+  direccion: "Francisco Villa 1, Barrio San Antonio, Iztapalapa, C.P. 09900, CDMX",
+
+  precioTransferencia: 80,
+  precioMercadoPago: 88.21,
+  linkClaseMuestra: "https://mpago.li/2vNPoHg",
+  linkMesIlimitado: "https://mpago.li/2iDQcTX",
+  linkPromo3x2: "https://mpago.li/1i6xsvS",
+
+  // Datos para transferencia. Si dejas la CLABE vacía, se le pide al alumno solicitarla por WhatsApp.
+  banco: "",
+  titular: "",
+  clabe: "",
+
+  cupoAeroyoga: 3,
+  cupoRegular: 5,
+  horasMinimasAnticipacion: 2,
+  semanasVisibles: 8
+};
+
+/* Horario regular (0 = domingo … 6 = sábado) */
+const SCHEDULE = {
+  1:[["08:00","Hatha Yoga"],["09:15","Yoga Pelota"],["18:00","Hatha Yoga"]],
+  2:[["08:00","Bolster / Bloques / Ligas"],["09:15","Bastón / Cinturón / Backmitra"],["18:00","Yoga Ashtanga"]],
+  3:[["08:00","Yoga Ashtanga"],["09:15","Hatha Yoga"],["18:00","Bolster / Bloques / Ligas"]],
+  4:[["08:00","Yoga Pelota"],["09:15","Bolster / Bloques / Ligas"],["18:00","Yoga Pelota"]],
+  5:[["08:00","Bastón / Cinturón / Backmitra"],["09:15","Yoga Movilidad"]],
+  6:[["08:15","Yoga Ashtanga Principiantes"]],
+  0:[["08:15","Yoga Ashtanga con un toque de Rocket"]]
+};
+const AERO = { days:[6,0], time:"09:30", name:"Aeroyoga" };
+/* =============================================================== */
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const DIAS = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const money = n => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
+const fmtTime = t => { let [h,m]=t.split(":").map(Number); const ap=h>=12?"pm":"am"; h=h%12||12; return `${h}:${String(m).padStart(2,"0")} ${ap}`; };
+const ymd = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const fmtDate = d => d.toLocaleDateString("es-MX",{weekday:"long",day:"numeric",month:"long"});
+const waUrl = msg => `https://wa.me/52${CONFIG.whatsapp}` + (msg ? `?text=${encodeURIComponent(msg)}` : "");
+
+/* ---------- Contenido estático ---------- */
+$("#yr").textContent = new Date().getFullYear();
+$$(".waLink").forEach(a => a.href = waUrl("Hola Soy Yoga, quiero información sobre las clases 🙏"));
+$("#waText").href = waUrl(); $("#waText").textContent = "WhatsApp " + CONFIG.whatsapp.replace(/(\d{2})(\d{4})(\d{4})/,"$1 $2 $3");
+$("#fbLink").href = CONFIG.facebook; $("#igLink").href = CONFIG.instagram;
+$("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.direccion);
+$("#mapLink").textContent = CONFIG.direccion;
+$$("[data-price-mp]").forEach(e => e.textContent = money(CONFIG.precioMercadoPago));
+$$("[data-price-tr]").forEach(e => e.textContent = money(CONFIG.precioTransferencia));
+$("#bankBox").innerHTML = CONFIG.clabe
+  ? `<span>Banco: <code>${CONFIG.banco}</code></span><span>Titular: <code>${CONFIG.titular}</code></span><span>CLABE: <code>${CONFIG.clabe}</code></span><span>Monto: <code>${money(CONFIG.precioTransferencia)}</code></span>`
+  : `<span>Pídenos los datos para transferir por <a href="${waUrl("Hola, quiero agendar mi clase muestra. ¿Me pasan los datos para transferir $"+CONFIG.precioTransferencia+"?")}" target="_blank" rel="noopener"><b>WhatsApp</b></a>, haz tu depósito de <code>${money(CONFIG.precioTransferencia)}</code> y sube la captura aquí abajo.</span>`;
+
+/* Tabla de horarios */
+(function renderSchedule(){
+  const order=[1,2,3,4,5,6,0], short=["DOM","LUN","MAR","MIÉ","JUE","VIE","SÁB"];
+  $("#schedTable").innerHTML = order.map(d=>{
+    let items = SCHEDULE[d].map(([t,n])=>({t,n,aero:false}));
+    if (AERO.days.includes(d)) items.push({t:AERO.time,n:"Aeroyoga",aero:true});
+    items.sort((a,b)=>a.t.localeCompare(b.t));
+    return `<div class="day"><h4>${short[d]}</h4>${items.map(i=>`<div class="cls ${i.aero?"aero":""}"><time>${fmtTime(i.t)}</time>${i.n}</div>`).join("")}</div>`;
+  }).join("");
+})();
+
+addEventListener("scroll",()=>$("#nav").classList.toggle("scrolled",scrollY>10),{passive:true});
+
+/* ---------- Modales ---------- */
+function openModal(m){ m.classList.add("open"); document.body.style.overflow="hidden"; }
+function closeModal(m){ m.classList.remove("open"); document.body.style.overflow=""; }
+$$(".modal").forEach(m=>{
+  m.addEventListener("click",e=>{ if(e.target===m||e.target.closest("[data-close]")) closeModal(m); });
+});
+addEventListener("keydown",e=>{ if(e.key==="Escape") $$(".modal.open").forEach(closeModal); });
+
+/* ---------- Plan ilimitado con disclaimer ---------- */
+$$("[data-plan]").forEach(b=>b.addEventListener("click",()=>{
+  const promo = b.dataset.plan==="promo";
+  $("#planTitle").textContent = promo ? "Promo 3 × 2 · $2,100" : "Mes ilimitado · $1,050";
+  $("#planPay").href = promo ? CONFIG.linkPromo3x2 : CONFIG.linkMesIlimitado;
+  $("#planOk").checked=false; setPlanBtn();
+  openModal($("#planModal"));
+}));
+function setPlanBtn(){ const ok=$("#planOk").checked; const a=$("#planPay"); a.style.opacity=ok?1:.45; a.style.pointerEvents=ok?"auto":"none"; a.setAttribute("aria-disabled",!ok); }
+$("#planOk").addEventListener("change",setPlanBtn);
+
+/* ---------- Reservas ---------- */
+const state = { tipo:null, date:null, slot:null, counts:{}, month:null, file:null };
+const today0 = () => { const d=new Date(); d.setHours(0,0,0,0); return d; };
+const maxDate = () => { const d=today0(); d.setDate(d.getDate()+CONFIG.semanasVisibles*7); return d; };
+
+function slotsFor(date){
+  const dow=date.getDay();
+  if(state.tipo==="aeroyoga") return AERO.days.includes(dow)?[{t:AERO.time,n:AERO.name,cap:CONFIG.cupoAeroyoga}]:[];
+  return (SCHEDULE[dow]||[]).map(([t,n])=>({t,n,cap:CONFIG.cupoRegular}));
+}
+function slotInfo(date,s){
+  const [h,m]=s.t.split(":").map(Number); const start=new Date(date); start.setHours(h,m,0,0);
+  const tooSoon = start - Date.now() < CONFIG.horasMinimasAnticipacion*36e5;
+  const taken = state.counts[`${ymd(date)}|${s.t}`]||0;
+  const left = Math.max(0,s.cap-taken);
+  return { tooSoon, left, open: !tooSoon && left>0 };
+}
+function dayState(date){
+  if(date<today0()||date>maxDate()) return "none";
+  const s=slotsFor(date); if(!s.length) return "none";
+  const infos=s.map(x=>slotInfo(date,x));
+  if(infos.some(i=>i.open)) return "open";
+  if(infos.every(i=>i.tooSoon)) return "none";
+  return "full";
+}
+function nextOpenAfter(date){
+  const d=new Date(date); d.setDate(d.getDate()+1);
+  for(;d<=maxDate();d.setDate(d.getDate()+1)) if(dayState(d)==="open") return new Date(d);
+  return null;
+}
+
+async function loadCounts(){
+  if(!CONFIG.appsScriptUrl) return;
+  $("#calLoading").classList.remove("hidden");
+  try{
+    const r=await fetch(CONFIG.appsScriptUrl+"?action=availability&t="+Date.now());
+    const j=await r.json(); if(j.ok) state.counts=j.counts||{};
+  }catch(e){ console.warn("No se pudo cargar disponibilidad",e); }
+  $("#calLoading").classList.add("hidden");
+}
+
+function renderCal(){
+  const m=state.month, y=m.getFullYear(), mo=m.getMonth();
+  $("#calTitle").textContent = m.toLocaleDateString("es-MX",{month:"long",year:"numeric"});
+  const t=today0();
+  $("#calPrev").disabled = y===t.getFullYear() && mo===t.getMonth();
+  const mx=maxDate(); $("#calNext").disabled = y>mx.getFullYear() || (y===mx.getFullYear() && mo>=mx.getMonth());
+  const first=new Date(y,mo,1), offset=(first.getDay()+6)%7, days=new Date(y,mo+1,0).getDate();
+  let html=["L","M","M","J","V","S","D"].map(d=>`<span class="dow">${d}</span>`).join("");
+  html+="<span></span>".repeat(offset);
+  for(let i=1;i<=days;i++){
+    const d=new Date(y,mo,i), st=dayState(d), sel=state.date&&ymd(d)===ymd(state.date);
+    const lbl = `${fmtDate(d)}${st==="full"?" (lleno)":st==="open"?" (disponible)":""}`;
+    html+=`<button type="button" class="${st} ${sel?"sel":""}" data-d="${ymd(d)}" ${st==="none"?"disabled":""} aria-label="${lbl}">${i}</button>`;
+  }
+  $("#calGrid").innerHTML=html;
+}
+$("#calPrev").onclick=()=>{ state.month.setMonth(state.month.getMonth()-1); renderCal(); };
+$("#calNext").onclick=()=>{ state.month.setMonth(state.month.getMonth()+1); renderCal(); };
+$("#calGrid").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-d]"); if(!b||b.disabled) return;
+  const [y,m,d]=b.dataset.d.split("-").map(Number); const date=new Date(y,m-1,d);
+  const notice=$("#fullNotice");
+  if(b.classList.contains("full")){
+    const nx=nextOpenAfter(date);
+    notice.innerHTML = `El ${fmtDate(date)} ya está lleno. ` + (nx ? `Próxima fecha disponible: <button type="button" data-goto="${ymd(nx)}">${fmtDate(nx)}</button>` : "Escríbenos por WhatsApp para buscarte un lugar.");
+    notice.classList.remove("hidden"); return;
+  }
+  notice.classList.add("hidden"); pickDate(date);
+});
+$("#fullNotice").addEventListener("click",e=>{
+  const b=e.target.closest("[data-goto]"); if(!b) return;
+  const [y,m,d]=b.dataset.goto.split("-").map(Number); const date=new Date(y,m-1,d);
+  state.month=new Date(y,m-1,1); $("#fullNotice").classList.add("hidden"); pickDate(date);
+});
+
+function pickDate(date){
+  state.date=date; state.slot=null; renderCal();
+  const list=slotsFor(date);
+  $("#slots").innerHTML=list.map((s,i)=>{
+    const inf=slotInfo(date,s);
+    const right = inf.tooSoon ? "Ya no disponible" : inf.left===0 ? "Lleno" : "Disponible";
+    return `<button type="button" class="slot" data-i="${i}" ${inf.open?"":"disabled"}><span><b>${fmtTime(s.t)} · ${s.n}</b><br><small>${DIAS[date.getDay()]}</small></span><span class="left">${right}</span></button>`;
+  }).join("");
+  show("#stepSlot"); hide("#stepData","#stepPay","#summary","#submitBtn");
+  const open=list.map(s=>slotInfo(date,s)).filter(i=>i.open);
+  if(list.length===1 && open.length) $("#slots .slot").click();
+  $("#stepSlot").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+$("#slots").addEventListener("click",e=>{
+  const b=e.target.closest(".slot"); if(!b||b.disabled) return;
+  $$("#slots .slot").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+  state.slot=slotsFor(state.date)[+b.dataset.i];
+  show("#stepData","#stepPay","#summary","#submitBtn"); updateSummary();
+});
+
+function show(...s){ s.forEach(x=>$(x).classList.remove("hidden")); }
+function hide(...s){ s.forEach(x=>$(x).classList.add("hidden")); }
+const metodo = () => $("input[name=metodo]:checked").value;
+const monto = () => metodo()==="mercadopago" ? CONFIG.precioMercadoPago : CONFIG.precioTransferencia;
+
+function updateSummary(){
+  if(!state.slot) return;
+  $("#sumClass").textContent = `${state.slot.n} · clase muestra`;
+  $("#sumWhen").textContent = `${fmtDate(state.date)} · ${fmtTime(state.slot.t)}`;
+  $("#sumAmt").textContent = money(monto());
+  const mp=metodo()==="mercadopago";
+  $("#trBox").classList.toggle("hidden",mp); $("#mpBox").classList.toggle("hidden",!mp);
+  $("#submitBtn").textContent = mp ? "Agendar e ir a pagar" : "Agendar mi clase";
+}
+$$("input[name=metodo]").forEach(r=>r.addEventListener("change",updateSummary));
+
+$$("input[name=tipo]").forEach(r=>r.addEventListener("change",async()=>{
+  state.tipo=r.value; state.date=null; state.slot=null;
+  hide("#stepSlot","#stepData","#stepPay","#summary","#submitBtn","#fullNotice"); show("#stepCal");
+  const t=today0(); state.month=new Date(t.getFullYear(),t.getMonth(),1);
+  renderCal(); await loadCounts(); renderCal();
+}));
+
+/* Comprobante: comprime imágenes antes de enviar */
+$("#f-file").addEventListener("change",async e=>{
+  const f=e.target.files[0]; state.file=null; $("#drop").classList.remove("has"); $("#dropPrev").classList.add("hidden");
+  if(!f) return;
+  if(f.size>8*1024*1024){ $("#dropTxt").textContent="El archivo pesa más de 8 MB, intenta con otro."; return; }
+  try{
+    if(f.type.startsWith("image/")){
+      const url=URL.createObjectURL(f); const img=new Image(); img.src=url; await img.decode();
+      const sc=Math.min(1,1600/Math.max(img.width,img.height)); const c=document.createElement("canvas");
+      c.width=Math.round(img.width*sc); c.height=Math.round(img.height*sc); c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      const data=c.toDataURL("image/jpeg",.82); URL.revokeObjectURL(url);
+      state.file={name:f.name.replace(/\.\w+$/,"")+".jpg",mime:"image/jpeg",data:data.split(",")[1]};
+      $("#dropPrev").src=data; $("#dropPrev").classList.remove("hidden");
+    }else{
+      const data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f);});
+      state.file={name:f.name,mime:f.type||"application/pdf",data:data.split(",")[1]};
+    }
+    $("#dropTxt").textContent="✓ "+f.name; $("#drop").classList.add("has");
+  }catch(err){ $("#dropTxt").textContent="No pudimos leer el archivo, intenta con otro."; }
+});
+
+function setErr(msg){ const e=$("#formErr"); e.textContent=msg||""; e.classList.toggle("show",!!msg); }
+
+$("#bookForm").addEventListener("submit",async e=>{
+  e.preventDefault(); setErr("");
+  const nombre=$("#f-nombre").value.trim(), tel=$("#f-tel").value.replace(/\D/g,""), email=$("#f-email").value.trim();
+  if(!state.slot) return setErr("Elige día y horario.");
+  if(nombre.length<3) return setErr("Escribe tu nombre completo.");
+  if(tel.length<10) return setErr("Escribe tu WhatsApp a 10 dígitos.");
+  if(email && !/^\S+@\S+\.\S+$/.test(email)) return setErr("Revisa tu correo.");
+  if(metodo()==="transferencia" && !state.file) return setErr("Sube la captura de tu transferencia.");
+  if(!$("#f-ok").checked) return setErr("Marca la casilla de confirmación.");
+
+  const payload={
+    tipo:state.tipo, clase:state.slot.n, fecha:ymd(state.date), fechaTexto:fmtDate(state.date),
+    hora:state.slot.t, horaTexto:fmtTime(state.slot.t), nombre, telefono:tel.slice(-10), email,
+    experiencia:$("#f-exp").value, notas:$("#f-notas").value.trim(),
+    metodo:metodo(), monto:monto(), comprobante: metodo()==="transferencia"?state.file:null
+  };
+  const btn=$("#submitBtn"), label=btn.textContent; btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Apartando tu lugar…';
+
+  if(!CONFIG.appsScriptUrl){ // Sin backend: envía por WhatsApp
+    const msg=`Hola Soy Yoga 🙏 Quiero agendar mi clase muestra:\n• ${payload.clase}\n• ${payload.fechaTexto}, ${payload.horaTexto}\n• Nombre: ${nombre}\n• Pago: ${payload.metodo==="mercadopago"?"Mercado Pago":"Transferencia (envío captura)"} ${money(payload.monto)}`;
+    showDone(payload, waUrl(msg)); btn.disabled=false; btn.textContent=label; return;
+  }
+  try{
+    const r=await fetch(CONFIG.appsScriptUrl,{method:"POST",body:JSON.stringify(payload)});
+    const j=await r.json();
+    if(!j.ok){
+      if(j.error==="full"){
+        await loadCounts(); renderCal(); pickDate(state.date);
+        setErr("¡Uy! Alguien acaba de tomar el último lugar de ese horario. Elige otro día u horario.");
+      } else setErr(j.message||"No pudimos registrar tu reserva. Intenta de nuevo o escríbenos por WhatsApp.");
+    } else showDone(payload);
+  }catch(err){
+    setErr("Hubo un problema de conexión. Intenta de nuevo o escríbenos por WhatsApp.");
+  }
+  btn.disabled=false; btn.textContent=label;
+});
+
+function showDone(p, waFallback){
+  hide("#bookForm"); show("#doneBox");
+  const when=`${p.clase} · ${p.fechaTexto}, ${p.horaTexto}`;
+  const waMsg=`Hola Soy Yoga 🙏 Acabo de agendar mi clase muestra: ${when}. Mi nombre es ${p.nombre}.`;
+  if(waFallback){
+    $("#doneBox h3").textContent="Último paso";
+    $("#doneTxt").innerHTML=`Envíanos tu reserva por WhatsApp para confirmar <b>${when}</b>.`;
+    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${waFallback}" target="_blank" rel="noopener">Enviar por WhatsApp</a>`+(p.metodo==="mercadopago"?`<a class="btn btn-ink" href="${CONFIG.linkClaseMuestra}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a>`:"");
+    return;
+  }
+  if(p.metodo==="mercadopago"){
+    $("#doneBox h3").textContent="¡Lugar apartado!";
+    $("#doneTxt").innerHTML=`Apartamos tu lugar para <b>${when}</b>.<br>Completa tu pago de <b>${money(p.monto)}</b> para confirmarlo.`;
+    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${CONFIG.linkClaseMuestra}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a><a class="btn btn-ghost" href="${waUrl(waMsg)}" target="_blank" rel="noopener">Avisar por WhatsApp</a>`;
+  }else{
+    $("#doneBox h3").textContent="¡Listo, nos vemos en clase!";
+    $("#doneTxt").innerHTML=`Recibimos tu reserva y tu comprobante para <b>${when}</b>. Te confirmaremos por WhatsApp.`;
+    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${waUrl(waMsg)}" target="_blank" rel="noopener">Escribirnos por WhatsApp</a><button class="btn btn-ghost" data-close>Cerrar</button>`;
+  }
+}
+
+function resetForm(){
+  $("#bookForm").reset(); show("#bookForm"); hide("#doneBox","#stepCal","#stepSlot","#stepData","#stepPay","#summary","#submitBtn","#fullNotice");
+  Object.assign(state,{tipo:null,date:null,slot:null,file:null});
+  $("#drop").classList.remove("has"); $("#dropPrev").classList.add("hidden"); $("#dropTxt").textContent="Imagen o PDF · máx. 8 MB"; setErr("");
+}
+$$("[data-book]").forEach(b=>b.addEventListener("click",e=>{
+  e.preventDefault(); resetForm(); openModal($("#bookModal"));
+  const pre=b.dataset.book; if(pre){ const r=$(`input[name=tipo][value=${pre}]`); r.checked=true; r.dispatchEvent(new Event("change")); }
+}));
+</script>
+</body>
+</html>
