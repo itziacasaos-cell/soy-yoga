@@ -540,6 +540,7 @@ const CONFIG = {
   facebook: "https://www.facebook.com/profile.php?id=61584089979860",
   instagram: "https://www.instagram.com/soy_yoga.mx/",
   direccion: "Francisco Villa 1, Barrio San Antonio, Iztapalapa, C.P. 09900, CDMX",
+  mapa: "https://maps.app.goo.gl/ggcKWZ3GLKj8jY9m9",
 
   precioTransferencia: 80,
   precioMercadoPago: 88.21,
@@ -586,7 +587,7 @@ $("#yr").textContent = new Date().getFullYear();
 $$(".waLink").forEach(a => a.href = waUrl("Hola Soy Yoga, quiero información sobre las clases 🙏"));
 $("#waText").href = waUrl(); $("#waText").textContent = "WhatsApp " + CONFIG.whatsapp.replace(/(\d{2})(\d{4})(\d{4})/,"$1 $2 $3");
 $("#fbLink").href = CONFIG.facebook; $("#igLink").href = CONFIG.instagram;
-$("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.direccion);
+$("#mapLink").href = CONFIG.mapa;
 $("#mapLink").textContent = CONFIG.direccion;
 $$("[data-price-mp]").forEach(e => e.textContent = money(CONFIG.precioMercadoPago));
 $$("[data-price-tr]").forEach(e => e.textContent = money(CONFIG.precioTransferencia));
