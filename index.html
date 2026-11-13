@@ -325,7 +325,7 @@ footer p,footer a{font-size:1.05rem}
   <div class="wrap">
     <div class="sched-top">
       <div><p class="eyebrow">¿Quieres probar algo más?</p><h2>Más clases de yoga</h2></div>
-      <p class="lead">Además del Aeroyoga tenemos Hatha, Ashtanga, Yoga Pelota y más, toda la semana. Tu primera clase de cualquiera también cuesta <strong>$80</strong>.</p>
+      <p class="lead">Además del Aeroyoga tenemos Hatha, Ashtanga, Yoga Pelota y más, toda la semana. Todas estas clases cuestan <strong>$70</strong>; sólo el Aeroyoga es de <strong>$80</strong>.</p>
     </div>
     <div class="sched-table" id="schedTable"></div>
     <div style="margin-top:34px;text-align:center"><a href="#" class="btn btn-ink" data-book="piso">Agendar clase muestra</a></div>
@@ -417,7 +417,7 @@ footer p,footer a{font-size:1.05rem}
         <p class="label">Ubicación</p>
         <p style="margin-top:8px"><a id="mapLink" target="_blank" rel="noopener"></a></p>
         <p class="label" style="margin-top:22px">Informes y reservas</p>
-        <p style="margin-top:8px"><a id="waText" target="_blank" rel="noopener"></a></p>
+        <p style="margin-top:8px"><a id="waText" target="_blank" rel="noopener"></a><br><a id="waText2" target="_blank" rel="noopener" style="opacity:.8"></a></p>
       </div>
       <div>
         <p class="label">Síguenos</p>
@@ -447,8 +447,8 @@ footer p,footer a{font-size:1.05rem}
       <div class="step">
         <div class="step-t"><span class="n">1</span>¿Qué clase quieres probar?</div>
         <div class="seg">
-          <div class="opt"><input type="radio" name="tipo" id="t-aero" value="aeroyoga"><label for="t-aero"><b>Aeroyoga</b><small>Sábados y domingos, 9:30 am</small></label></div>
-          <div class="opt"><input type="radio" name="tipo" id="t-piso" value="piso"><label for="t-piso"><b>Yoga (horario regular)</b><small>Hatha, Ashtanga, Pelota y más</small></label></div>
+          <div class="opt"><input type="radio" name="tipo" id="t-aero" value="aeroyoga"><label for="t-aero"><b>Aeroyoga</b><small>Sábados y domingos, 9:30 am · $80</small></label></div>
+          <div class="opt"><input type="radio" name="tipo" id="t-piso" value="piso"><label for="t-piso"><b>Yoga (horario regular)</b><small>Hatha, Ashtanga, Pelota y más · $70</small></label></div>
         </div>
       </div>
 
@@ -482,8 +482,8 @@ footer p,footer a{font-size:1.05rem}
       <div class="step hidden" id="stepPay">
         <div class="step-t"><span class="n">5</span>Forma de pago</div>
         <div class="seg">
-          <div class="opt"><input type="radio" name="metodo" id="m-tr" value="transferencia" checked><label for="m-tr"><b>Transferencia · <span data-price-tr>$80</span></b><small>Sin comisión. Sube tu captura aquí.</small></label></div>
-          <div class="opt"><input type="radio" name="metodo" id="m-mp" value="mercadopago"><label for="m-mp"><b>Mercado Pago · <span data-price-mp>$88.21</span></b><small>Incluye comisión. Pagas al terminar.</small></label></div>
+          <div class="opt"><input type="radio" name="metodo" id="m-tr" value="transferencia" checked><label for="m-tr"><b>Transferencia · <span id="trPrice">$80</span></b><small>Sin comisión. Sube tu captura aquí.</small></label></div>
+          <div class="opt" id="mpOpt"><input type="radio" name="metodo" id="m-mp" value="mercadopago"><label for="m-mp"><b>Mercado Pago · <span data-price-mp>$88.21</span></b><small>Incluye comisión. Pagas al terminar.</small></label></div>
         </div>
         <div id="trBox">
           <div class="bank" id="bankBox"></div>
@@ -536,13 +536,17 @@ const CONFIG = {
   // Pega aquí la URL de tu Apps Script (ver LEEME.md). Si está vacío, las reservas se envían por WhatsApp.
   appsScriptUrl: "https://script.google.com/macros/s/AKfycbyQAfpVvWS7Ha4ZVIKyWEQt9uCk21qeSjBYlsRwvIz-rHxy-hSzW-seuYCVfhprqAip6w/exec",
 
-  whatsapp: "5530696235",
+  whatsapp: "5567788429",   // número principal
+  whatsapp2: "5530696235",  // número secundario
   facebook: "https://www.facebook.com/profile.php?id=61584089979860",
   instagram: "https://www.instagram.com/soy_yoga.mx/",
   direccion: "Francisco Villa 1, Barrio San Antonio, Iztapalapa, C.P. 09900, CDMX",
   mapa: "https://maps.app.goo.gl/ggcKWZ3GLKj8jY9m9",
 
-  precioTransferencia: 80,
+  precioTransferencia: 80,  // Aeroyoga
+  precioRegular: 70,        // demás clases (transferencia)
+  // Link de Mercado Pago para las clases de $70. Si está vacío, esas clases sólo se pagan por transferencia.
+  linkClaseRegular: "",
   precioMercadoPago: 88.21,
   linkClaseMuestra: "https://mpago.li/2vNPoHg",
   linkMesIlimitado: "https://mpago.li/2iDQcTX",
@@ -585,15 +589,17 @@ const waUrl = msg => `https://wa.me/52${CONFIG.whatsapp}` + (msg ? `?text=${enco
 /* ---------- Contenido estático ---------- */
 $("#yr").textContent = new Date().getFullYear();
 $$(".waLink").forEach(a => a.href = waUrl("Hola Soy Yoga, quiero información sobre las clases 🙏"));
-$("#waText").href = waUrl(); $("#waText").textContent = "WhatsApp " + CONFIG.whatsapp.replace(/(\d{2})(\d{4})(\d{4})/,"$1 $2 $3");
+const fmtTel = n => n.replace(/(\d{2})(\d{4})(\d{4})/,"$1 $2 $3");
+$("#waText").href = waUrl(); $("#waText").textContent = "WhatsApp " + fmtTel(CONFIG.whatsapp);
+$("#waText2").href = `https://wa.me/52${CONFIG.whatsapp2}`; $("#waText2").textContent = "También: " + fmtTel(CONFIG.whatsapp2);
 $("#fbLink").href = CONFIG.facebook; $("#igLink").href = CONFIG.instagram;
 $("#mapLink").href = CONFIG.mapa;
 $("#mapLink").textContent = CONFIG.direccion;
 $$("[data-price-mp]").forEach(e => e.textContent = money(CONFIG.precioMercadoPago));
 $$("[data-price-tr]").forEach(e => e.textContent = money(CONFIG.precioTransferencia));
 $("#bankBox").innerHTML = CONFIG.clabe
-  ? `<span>Banco: <code>${CONFIG.banco}</code></span><span>Titular: <code>${CONFIG.titular}</code></span><span>CLABE: <code>${CONFIG.clabe}</code></span><span>Monto: <code>${money(CONFIG.precioTransferencia)}</code></span>`
-  : `<span>Pídenos los datos para transferir por <a href="${waUrl("Hola, quiero agendar mi clase muestra. ¿Me pasan los datos para transferir $"+CONFIG.precioTransferencia+"?")}" target="_blank" rel="noopener"><b>WhatsApp</b></a>, haz tu depósito de <code>${money(CONFIG.precioTransferencia)}</code> y sube la captura aquí abajo.</span>`;
+  ? `<span>Banco: <code>${CONFIG.banco}</code></span><span>Titular: <code>${CONFIG.titular}</code></span><span>CLABE: <code>${CONFIG.clabe}</code></span><span>Monto: <code class="trAmt">${money(CONFIG.precioTransferencia)}</code></span>`
+  : `<span>Pídenos los datos para transferir por <a href="${waUrl("Hola, quiero agendar mi clase muestra. ¿Me pasan los datos para transferir?")}" target="_blank" rel="noopener"><b>WhatsApp</b></a>, haz tu depósito de <code class="trAmt">${money(CONFIG.precioTransferencia)}</code> y sube la captura aquí abajo.</span>`;
 
 /* Tabla de horarios */
 (function renderSchedule(){
@@ -727,12 +733,19 @@ $("#slots").addEventListener("click",e=>{
 function show(...s){ s.forEach(x=>$(x).classList.remove("hidden")); }
 function hide(...s){ s.forEach(x=>$(x).classList.add("hidden")); }
 const metodo = () => $("input[name=metodo]:checked").value;
-const monto = () => metodo()==="mercadopago" ? CONFIG.precioMercadoPago : CONFIG.precioTransferencia;
+const precioTr = () => state.tipo==="piso" ? CONFIG.precioRegular : CONFIG.precioTransferencia;
+const mpLink = () => state.tipo==="piso" ? CONFIG.linkClaseRegular : CONFIG.linkClaseMuestra;
+const monto = () => metodo()==="mercadopago" ? CONFIG.precioMercadoPago : precioTr();
 
 function updateSummary(){
   if(!state.slot) return;
   $("#sumClass").textContent = `${state.slot.n} · clase muestra`;
   $("#sumWhen").textContent = `${fmtDate(state.date)} · ${fmtTime(state.slot.t)}`;
+  const noMp = !mpLink();
+  $("#mpOpt").classList.toggle("hidden",noMp);
+  if(noMp && metodo()==="mercadopago") $("#m-tr").checked=true;
+  $("#trPrice").textContent = money(precioTr());
+  $$(".trAmt").forEach(e=>e.textContent=money(precioTr()));
   $("#sumAmt").textContent = money(monto());
   const mp=metodo()==="mercadopago";
   $("#trBox").classList.toggle("hidden",mp); $("#mpBox").classList.toggle("hidden",!mp);
@@ -814,13 +827,13 @@ function showDone(p, waFallback){
   if(waFallback){
     $("#doneBox h3").textContent="Último paso";
     $("#doneTxt").innerHTML=`Envíanos tu reserva por WhatsApp para confirmar <b>${when}</b>.`;
-    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${waFallback}" target="_blank" rel="noopener">Enviar por WhatsApp</a>`+(p.metodo==="mercadopago"?`<a class="btn btn-ink" href="${CONFIG.linkClaseMuestra}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a>`:"");
+    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${waFallback}" target="_blank" rel="noopener">Enviar por WhatsApp</a>`+(p.metodo==="mercadopago"?`<a class="btn btn-ink" href="${mpLink()}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a>`:"");
     return;
   }
   if(p.metodo==="mercadopago"){
     $("#doneBox h3").textContent="¡Lugar apartado!";
     $("#doneTxt").innerHTML=`Apartamos tu lugar para <b>${when}</b>.<br>Completa tu pago de <b>${money(p.monto)}</b> para confirmarlo.`;
-    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${CONFIG.linkClaseMuestra}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a><a class="btn btn-ghost" href="${waUrl(waMsg)}" target="_blank" rel="noopener">Avisar por WhatsApp</a>`;
+    $("#doneActions").innerHTML=`<a class="btn btn-terra" href="${mpLink()}" target="_blank" rel="noopener">Pagar ${money(p.monto)} con Mercado Pago</a><a class="btn btn-ghost" href="${waUrl(waMsg)}" target="_blank" rel="noopener">Avisar por WhatsApp</a>`;
   }else{
     $("#doneBox h3").textContent="¡Listo, nos vemos en clase!";
     $("#doneTxt").innerHTML=`Recibimos tu reserva y tu comprobante para <b>${when}</b>. Te confirmaremos por WhatsApp.`;
