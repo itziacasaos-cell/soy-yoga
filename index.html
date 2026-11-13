@@ -104,6 +104,13 @@ header.nav.scrolled{border-color:var(--line)}
 .cls{background:#fff;border-radius:12px;padding:10px 11px;font-size:.88rem;line-height:1.2;font-weight:600}
 .cls time{display:block;font-size:.78rem;color:var(--mauve);font-weight:500;margin-bottom:3px}
 .cls.aero{background:var(--terra);color:#fff}
+.price-row{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.price-chip{flex:1 1 180px;max-width:260px;background:#fff;border-radius:16px;padding:14px 20px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-chip .label{width:100%;font-size:.72rem}
+.price-chip strong{font-size:2rem;font-weight:900;line-height:1}
+.price-chip small{color:var(--mauve)}
+.price-chip.aero{background:var(--terra);color:#fff}
+.price-chip.aero .label,.price-chip.aero small{color:#FBE3DA}
 .cls.aero time{color:#FBE3DA}
 @media(max-width:1000px){.sched-table{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:640px){.sched-table{grid-template-columns:1fr 1fr}.sched-top{grid-template-columns:1fr}}
@@ -325,7 +332,13 @@ footer p,footer a{font-size:1.05rem}
   <div class="wrap">
     <div class="sched-top">
       <div><p class="eyebrow">¿Quieres probar algo más?</p><h2>Más clases de yoga</h2></div>
-      <p class="lead">Además del Aeroyoga tenemos Hatha, Ashtanga, Yoga Pelota y más, toda la semana. Todas estas clases cuestan <strong>$70</strong>; sólo el Aeroyoga es de <strong>$80</strong>.</p>
+      <div>
+        <p class="lead">Complementa tu práctica con Hatha, Ashtanga, Yoga Pelota, Movilidad y más, de lunes a domingo.</p>
+        <div class="price-row">
+          <div class="price-chip"><span class="label">Clases regulares</span><strong>$70</strong><small>por clase</small></div>
+          <div class="price-chip aero"><span class="label">Aeroyoga</span><strong>$80</strong><small>por clase</small></div>
+        </div>
+      </div>
     </div>
     <div class="sched-table" id="schedTable"></div>
     <div style="margin-top:34px;text-align:center"><a href="#" class="btn btn-ink" data-book="piso">Agendar clase muestra</a></div>
